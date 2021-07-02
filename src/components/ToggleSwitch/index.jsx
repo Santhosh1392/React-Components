@@ -1,4 +1,5 @@
 import React, { useReducer, useEffect } from "react";
+import PropTypes from 'prop-types'
 import "./ToggleSwitch.scss";
 
 /**
@@ -35,5 +36,10 @@ const ToggleSwitch = ({ on, onChange }) => {
 ToggleSwitch.defaultProps = {
   on: false,
 };
+
+ToggleSwitch.propTypes = {
+  on: PropTypes.bool,
+  onChange: PropTypes.func
+}
 
 export default ToggleSwitch;
