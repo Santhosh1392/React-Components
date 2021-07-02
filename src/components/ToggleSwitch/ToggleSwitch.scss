@@ -1,0 +1,44 @@
+$gray: #333;
+$theme-color: hsl(199, 98%, 48%);
+$darker-theme-color: #007ffa;
+
+.toggle-switch {
+  display: inline-block;
+  width: 65px;
+  margin: 20px 0;
+  position: relative;
+  cursor: pointer;
+  .toggle-track {
+    display: block;
+    height: 13px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: $gray;
+  }
+
+  .toggle-circle {
+    display: block;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 3px solid $darker-theme-color;
+    position: absolute;
+    background-color: #fff;
+    top: -9px;
+    cursor: pointer;
+    transition: right 0.5s ease-in-out;
+    -webkit-transition: right 0.5s ease-in-out;
+    right: calc(100% - 31px);
+  }
+}
+
+.toggle-switch.active {
+  .toggle-track {
+    background-color: $theme-color;
+  }
+
+  .toggle-circle {
+    top: -10px;
+    right: 0;
+  }
+}
