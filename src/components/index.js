@@ -1,3 +1,1 @@
-import ToggleSwitch from './ToggleSwitch'
-
-export {ToggleSwitch}
+export { default as ToggleSwitch } from './ToggleSwitch'
