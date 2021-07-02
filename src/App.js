@@ -1,7 +1,7 @@
 import './App.css';
-import {ToggleSwitch} from './components'
+import { ToggleSwitch } from './components'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <h3>Toggle Switch</h3>
