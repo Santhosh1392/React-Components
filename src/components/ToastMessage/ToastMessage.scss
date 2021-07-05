@@ -1,0 +1,66 @@
+$fixedGap: 15px;
+@mixin toastMixin($themecolor, $textColor) {
+  position: fixed;
+  width: 300px;
+  padding: 15px;
+  background-color: $themecolor;
+  border-radius: 5px;
+
+  .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    color: $textColor;
+    cursor: pointer;
+  }
+
+  .toast-title {
+    color: $textColor;
+    margin: 0 0 6px;
+    font-size: 18px;
+  }
+
+  .toast-description {
+    color: $textColor;
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.toast-message-container.success {
+  @include toastMixin(#22BB33, #000);
+}
+
+.toast-message-container.danger {
+  @include toastMixin(#BB2124, #fff);
+}
+
+.toast-message-container.warning {
+  @include toastMixin(#F0AD4E, #000)
+}
+
+.toast-message-container.info {
+  @include toastMixin(#5BC0DE, #000);
+}
+
+.toast-message-container.top-right {
+  top: $fixedGap;
+  right: $fixedGap;
+}
+
+.toast-message-container.bottom-right {
+  bottom: $fixedGap;
+  right: $fixedGap;
+}
+
+.toast-message-container.top-left {
+  top: $fixedGap;
+  left: $fixedGap;
+}
+
+.toast-message-container.bottom-left {
+  bottom: $fixedGap;
+  left: $fixedGap;
+}
