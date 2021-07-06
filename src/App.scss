@@ -1,0 +1,76 @@
+.App {
+  max-width: 1000px;
+  margin: auto;
+  font-family: 'Nunito', sans-serif;
+  height: 100vh;
+  .lang-buttons-flex {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+
+    .language-button {
+      margin-right: 10px;
+      border: 2px solid #293e40;
+      padding: 6px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: 400;
+      outline: none;
+      background-color: #293e40;
+      color: #f1f1f1;
+    }
+
+    .language-button.active {
+      background-color: #ef7370;
+      border-color: #ef7370;
+      color: #333;
+      font-weight: 600;
+    }
+  }
+
+  .lang-provider-example {
+    margin-top: 40px;
+    border-radius: 25px;
+
+    h2 {
+      margin: 0;
+      font-size: 32px;
+      color: #293E46;
+    }
+  }
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
