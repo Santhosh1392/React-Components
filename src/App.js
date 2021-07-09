@@ -1,9 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { LanguageContext } from './context';
 import { supportedLanguages } from './constants'
 import './App.scss';
+import TagsInput from './components/TagsInput';
 
 const App = () => {
+  const [tagsList, setTagsList] = useState([])
   const langContext = useContext(LanguageContext)
   const { content, setSiteContent, setSiteLanguage, siteLanguage } = langContext
 
@@ -11,6 +13,11 @@ const App = () => {
     const { value, content } = language
     setSiteContent(content)
     setSiteLanguage(value)
+  }
+
+  const handleOnChange = (list) => {
+    console.log('list', list)
+    setTagsList(list)
   }
 
   return (
@@ -34,6 +41,9 @@ const App = () => {
           <p>{content.INTRO_DESCRIPTION}</p>
         </div>
       </div>
+      <h2>Tags Input Demo</h2>
+      <TagsInput onChange={handleOnChange} />
+      <h3>Added Tags: {`[ ${tagsList.join(', ')} ]`}</h3>
     </div>
   );
 }
