@@ -3,6 +3,7 @@ import { LanguageContext } from './context';
 import { supportedLanguages } from './constants'
 import './App.scss';
 import TagsInput from './components/TagsInput';
+import { TimePicker } from './components';
 
 const App = () => {
   const [tagsList, setTagsList] = useState([])
@@ -19,6 +20,8 @@ const App = () => {
     console.log('list', list)
     setTagsList(list)
   }
+
+  const handleOnTimeChange = () => {}
 
   return (
     <div className="App">
@@ -44,6 +47,11 @@ const App = () => {
       <h2>Tags Input Demo</h2>
       <TagsInput onChange={handleOnChange} />
       <h3>Added Tags: {`[ ${tagsList.join(', ')} ]`}</h3>
+      <h3>Timepicker Component</h3>
+      <TimePicker
+        time="10:14a"
+        onChange={handleOnTimeChange}
+      />
     </div>
   );
 }
