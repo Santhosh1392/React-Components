@@ -3,12 +3,13 @@ import { LanguageContext } from './context';
 import { supportedLanguages } from './constants'
 import './App.scss';
 import TagsInput from './components/TagsInput';
-import { TimePicker } from './components';
+import { OtpForm, TimePicker } from './components';
 
 const App = () => {
   const [tagsList, setTagsList] = useState([])
   const langContext = useContext(LanguageContext)
   const { content, setSiteContent, setSiteLanguage, siteLanguage } = langContext
+  const [otpString, setOtpString] = useState('')
 
   const handleOnLanguageChange = (language) => {
     const { value, content } = language
@@ -22,10 +23,13 @@ const App = () => {
   }
 
   const handleOnTimeChange = () => {}
+  const handleOnOTPChange = (data) => {
+    setOtpString(data.otpString)
+  }
 
   return (
     <div className="App">
-      <div className="content">
+      {/* <div className="content">
         <div className="lang-buttons-flex">
           {supportedLanguages && supportedLanguages.map((language, index) => {
             const { name, value } = language;
@@ -51,7 +55,10 @@ const App = () => {
       <TimePicker
         time="10:14a"
         onChange={handleOnTimeChange}
-      />
+      /> */}
+      <h3>OTP Form Demo</h3>
+      <OtpForm onChange={handleOnOTPChange} />
+      <h4>OTP: {otpString}</h4>
     </div>
   );
 }

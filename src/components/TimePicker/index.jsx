@@ -59,8 +59,8 @@ const TimePicker = ({ time, onChange }) => {
   const getFormattedTime = () => {
     const formattedHours = hours && hours > 12 ? hours - 12 : hours
     return `
-      ${formattedHours > 10 ? formattedHours : `0${formattedHours}`}${formattedHours && ' : '}
-      ${minutes > 10 ? minutes : `0${minutes}`} ${amPm}`
+      ${formattedHours >= 10 ? formattedHours : `0${formattedHours}`}${formattedHours && ' : '}
+      ${minutes >= 10 ? minutes : `0${minutes}`} ${amPm}`
   }
 
   const setInitialTime = () => {
