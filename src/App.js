@@ -3,7 +3,7 @@ import { LanguageContext } from './context';
 import { supportedLanguages } from './constants'
 import './App.scss';
 import TagsInput from './components/TagsInput';
-import { OtpForm, TimePicker } from './components';
+import { FormInput, OtpForm, TimePicker } from './components';
 
 const App = () => {
   const [tagsList, setTagsList] = useState([])
@@ -29,7 +29,7 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* <div className="content">
+      <div className="content">
         <div className="lang-buttons-flex">
           {supportedLanguages && supportedLanguages.map((language, index) => {
             const { name, value } = language;
@@ -55,10 +55,40 @@ const App = () => {
       <TimePicker
         time="10:14a"
         onChange={handleOnTimeChange}
-      /> */}
+      />
       <h3>OTP Form Demo</h3>
       <OtpForm onChange={handleOnOTPChange} />
       <h4>OTP: {otpString}</h4>
+      <div className="form-section">
+        <h4>With Labels</h4>
+        <FormInput
+          placeholder="user@xyz.com"
+          errorDescription="Enter valid email address"
+          type="email"
+          labelText="Email"
+        />
+        <FormInput
+          placeholder="Password"
+          type="password"
+          labelText="Password"
+        />
+        <FormInput
+          labelText="Readonly"
+          value="Readonly Input"
+          readOnly
+        />
+        <h4>Without Labels</h4>
+        <FormInput
+          multiline
+          placeholder="Description"
+        />
+        <FormInput
+          type="date"
+        />
+        <FormInput
+          type="time"
+        />
+      </div>
     </div>
   );
 }
